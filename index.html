@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Calculator</title>
+<style>
+body{
+margin:0px;
+padding:0px;
+}
+.CGPA_convertor{
+width: 500px;
+height: 300px;
+border-radius: 10px;
+border: 1px solid orange;
+box-shadow: 10px 10px 5px orange;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.heading{
+font-size:25px;
+letter-spacing:1px;
+text-align:center;
+}
+.sub_container{
+margin-left:10px;
+margin-right:10px;
+}
+input{
+padding:5px;
+width:100%;
+box-sizing: border-box;
+border:none;
+border-bottom:1px solid black;
+margin-top:8px;
+margin-bottom:15px;
+}
+.button, .clear{
+padding:9px;
+width:40%;
+text-align:center;
+border-radius: 10px;
+border:none;
+transition: all 0.2s ease-in-out;
+bottom:10px;
+}
+button:hover{
+letter-spacing:1px;
+//color: rgba(255, 255, 255, 1);
+box-shadow: 0 5px 15px orange;
+}
+#ans{
+margin-top:5px;
+}
+</style>
+</head>
+<body>
+	<div class="CGPA_convertor">
+		<p class="heading"><b>CGPA Convertor</b></p>
+			<div class="sub_container">
+				<label style="font-size:20px;"><b>Percentage :</b></label>
+				<input placeholder="Enter percentage...." id="value1"></input>
+				<label style="font-size:20px;"><b>CGPA :</b></label><br>
+				<label style="font-size:30px;" id="ans"></label><br><br>
+				<center><button type="button" class="button">Calulate</button>
+				<button type="button" class="clear">Clear</button></center>
+			</div>
+	</div>
+<script>
+document.querySelector('.button').addEventListener('click', function(){
+let value = Number(document.querySelector('#value1').value);
+let final = (value)/9.5;
+let ans1 = document.querySelector('#ans');
+ans1.innerHTML=(final);
+console.log(value);
+console.log(final);
+});
+document.querySelector('.clear').addEventListener('click', function(){
+document.querySelector('#value1').value = ' ';
+document.querySelector('#ans').textContent = ' ';
+});
+</script>
+</body>
+</html>
